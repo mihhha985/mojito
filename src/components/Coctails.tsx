@@ -4,29 +4,19 @@ import gsap from "gsap";
 
 export function Coctails() {
   useGSAP(() => {
-    gsap.from("#c-left-leaf", {
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#cocktaiks",
+        trigger: "#cocktails",
         start: "top 30%",
         end: "bottom 80%",
         scrub: true,
       },
-      x: -200,
-      y: 150
     })
-    gsap.from("#c-right-leaf", {
-      scrollTrigger: {
-        trigger: "#cocktaiks",
-        start: "top 30%",
-        end: "bottom 80%",
-        scrub: true,
-      },
-      x: 300,
-      y: 100
-    })
+    tl.from("#c-left-leaf", { x: -200, y: 150 })
+    tl.from("#c-right-leaf", { x: 300, y: 100 })
   });
   return (
-    <section id="cocktails" className="noisy border-t-2 border-t-fuchsia-300">
+    <section id="cocktails" className="noisy">
       <img src="/images/cocktail-left-leaf.png" alt="left-leaf" id="c-left-leaf" />
       <img src="/images/cocktail-right-leaf.png" alt="right-leaf" id="c-right-leaf" />
 
@@ -36,7 +26,7 @@ export function Coctails() {
 
           <ul>
             {cocktailLists.map((cocktail) =>
-              <li>
+              <li key={cocktail.name}>
                 <div className="md:me-28">
                   <h3>{cocktail.name}</h3>
                   <p>{cocktail.country} | {cocktail.detail}</p>
@@ -51,8 +41,8 @@ export function Coctails() {
           <h2>Most loved mocktails:</h2>
 
           <ul>
-            {mockTailLists .map((cocktail) =>
-              <li>
+            {mockTailLists.map((cocktail) =>
+              <li key={cocktail.name}>
                 <div className="md:me-28">
                   <h3>{cocktail.name}</h3>
                   <p>{cocktail.country} | {cocktail.detail}</p>

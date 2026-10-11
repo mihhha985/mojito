@@ -32,12 +32,12 @@ export function Hero() {
 
     gsap.fromTo(".headline-left",
       { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 0.4, delay: 1.6}
+      { opacity: 1, x: 0, duration: 0.4, delay: 1.6, ease: "circ.inOut"}
     )
 
     gsap.fromTo(".headline-right",
       { opacity: 0, x: 100},
-      { opacity: 1, x: 0, duration: 0.6, delay: 1.8}
+      { opacity: 1, x: 0, duration: 0.6, delay: 1.8, ease: "circ.inOut"}
     )
 
     gsap.timeline({
