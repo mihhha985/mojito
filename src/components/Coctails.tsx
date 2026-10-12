@@ -12,8 +12,8 @@ export function Coctails() {
         scrub: true,
       },
     })
-    tl.from("#c-left-leaf", { x: -200, y: 150 })
-    tl.from("#c-right-leaf", { x: 300, y: 100 })
+    tl.from("#c-left-leaf", { x: -200, y: 150, ease: "power3.inOut" })
+    tl.from("#c-right-leaf", { x: 300, y: 100, ease: "power3.inOut" })
   });
   return (
     <section id="cocktails" className="noisy">
