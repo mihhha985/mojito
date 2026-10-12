@@ -41,7 +41,7 @@ export function Art() {
             ))}
           </ul>
 
-          <div className="cocktail-img ">
+          <div className="cocktail-img">
             <img
               src="/images/under-img.jpg"
               alt="cocktail"
